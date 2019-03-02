@@ -10,11 +10,9 @@ const controllers = require('./app/controllers')
 const validators = require('./app/validators')
 
 routes.post('/users',
-  validate(validators.User),
   handle(controllers.UserController.store)
 )
 routes.post('/sessions',
-  validate(validators.Sessions),
   handle(controllers.SessionController.store)
 )
 
@@ -30,11 +28,9 @@ routes.get('/ads/:id',
   handle(controllers.AdController.show)
 )
 routes.post('/ads',
-  validate(validators.Ad),
   handle(controllers.AdController.store)
 )
 routes.put('/ads/:id',
-  validate(validators.Ad),
   handle(controllers.AdController.update)
 )
 routes.delete('/ads/:id',
@@ -46,7 +42,6 @@ routes.delete('/ads/:id',
  */
 
 routes.post('/purchases',
-  validate(validators.Purchase),
   handle(controllers.PurchaseController.store)
 )
 
